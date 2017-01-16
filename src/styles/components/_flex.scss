@@ -1,0 +1,53 @@
+
+.flex {
+  display: flex;
+  overflow-y: hidden;
+
+  text-align: left;
+
+  align-items: center;
+
+
+  &.flex-dir-row {
+    @include flex-direction(row);
+  }
+
+  &.flex-dir-row-reverse {
+    @include flex-direction(row-reverse);
+  } 
+  
+  &.flex-dir-column {
+    @include flex-direction(column);
+  } 
+
+  &.flex-dir-column-reverse {
+    @include flex-direction(column-reverse);
+  }
+
+  &.flex-align-middle {
+    align-items: center;
+  }
+
+  .flex-item {
+    min-width: 1.5rem;
+    margin-left: map-get($space-x, md);
+
+    flex: 1;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  .flex-double {
+    flex: 2;
+  }
+
+  .flex-tripled {
+    flex: 3;
+  }
+
+  .flex-fouth{
+    flex: 4;
+  }
+}

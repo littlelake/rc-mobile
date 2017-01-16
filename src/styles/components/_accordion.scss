@@ -1,0 +1,65 @@
+.accordion {
+  width: 100%;
+  margin-top: 1rem;
+
+  &.active .accordion-header:after{
+    margin-top: -2px;
+
+    transition: transform .3s ease-in-out;
+    transform: rotate(-45deg);
+
+    will-change: transition;
+  }
+  .accordion-header {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+
+    padding: .4rem 1rem;
+
+    border-bottom: 1px solid #fafafa;
+    background-color: #fff;  
+    &:after {
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+
+      display: inline-block;
+
+      width: 6px;
+      height: 6px;
+      margin-top: -5px;
+
+      content: " ";
+      transition: transform .3s ease-in-out;
+      transform: rotate(135deg);
+
+      border-width: 1px 1px 0 0;
+      border-style: solid;
+      border-color: #c8c8cd;
+
+      will-change: transition;
+    }  
+    .accordion-title {
+      flex: 1;
+    }
+  }
+  .accordion-body {
+    overflow: hidden;
+
+    height: calc( 100% + 10px);
+
+    transition: height .18s cubic-bezier(0, 1, .5, 1),transform .35s cubic-bezier(0, 1, .5, 1);
+    transform: translateY(0);
+
+    background-color: #fafafa;
+
+    will-change: height,transform;
+  }
+  .slide-up {
+    height: 0;
+
+    transform: trnslateY(-100%); 
+  }
+}

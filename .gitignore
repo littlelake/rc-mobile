@@ -1,0 +1,10 @@
+﻿node_modules
+npm-debug.log
+build
+
+# mac 系统文件
+.DS_STORE
+
+# 编辑器文件
+.idea
+.vscode

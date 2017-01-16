@@ -1,0 +1,78 @@
+
+.tabs {
+  overflow: hidden;
+  
+  .tabs-hd {
+    position: relative;
+
+    display: flex;
+
+    height: $tabs-header-height;
+
+    white-space: nowrap;
+
+    color: $tabs-header-color;
+
+    background-color: $tabs-header-bg;
+  }
+
+  .tab-line {
+    position: absolute;
+
+    bottom: 0;
+
+    // height: $tabs-line-height;
+    height: 1px;
+    margin-top: -$tabs-line-height;
+
+    transition: left .35s ease-in-out;
+
+    background-color: $tabs-line-bg;
+  }
+
+  .tab {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    &.active {
+      color: $color-primary;
+
+      // font-weight: 600;
+    }
+  }
+  
+  // 是否有底部横线
+  &.lined .tab {
+
+    &:first-child:after {
+      display: none;
+    }
+
+    &:after {
+      height: $tabs-border-height;
+      margin-top: - $tabs-border-height/2; 
+
+      @include border-left($tabs-border-color);
+
+      top: 50%;
+    }
+  }
+
+}
+
+// tab 内容
+.tab-panel {
+  // display: flex;
+
+  overflow: hidden;
+
+  // height: 200px;
+
+  align-items: center;
+  justify-content: center;
+}

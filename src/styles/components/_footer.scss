@@ -1,0 +1,77 @@
+.footer {
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+
+  width: 100%;
+  height: 3.4rem;
+
+  background-color: #fff;
+
+  justify-content: center;
+  &:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1px solid #d9d9d9;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+  }
+  .footer-item {
+    display: inline-block;
+
+    min-width: 80px;
+    max-width: 168px;
+    margin: 0;
+
+    cursor: pointer;
+    transition: padding-top .3s;
+    transform: translate(0, 0);
+
+    color: map-get($colorful, gray);
+
+    border: 1rem;
+    outline: none;
+    background: none;
+
+    font-size: inherit;
+    font-weight: inherit;
+
+    flex: 1 1 0%;
+    &.active {
+      color: $color-brand;
+      .footer-icon {
+        color: $color-brand;
+      }
+    }
+  }
+  .footer-icon {
+    display: block;
+
+    white-space: nowrap;
+    letter-spacing: normal;
+    text-transform: none;
+    word-wrap: normal;
+
+    font-size: 1.8rem;
+
+    line-height: 1;
+
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+  .footer-txt {
+    display: inherit;
+
+    font-size: 80%;
+  }
+}

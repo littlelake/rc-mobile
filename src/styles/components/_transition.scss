@@ -1,0 +1,26 @@
+
+.page-enter {
+  transition: all .2s ease;
+  transform: translate3d(100%, 0, 0);
+
+  opacity: 0.01;
+    
+  &.page-enter-active {
+    transform: translate3d(0, 0, 0);
+
+    opacity: 1;
+  }
+}
+
+.page-leave {
+  transition: all .2s ease;
+  transform: translate3d(0, 0, 0);
+
+  opacity: 1;
+  
+  &.page-leave-active {
+    transform: translate3d(100%, 0, 0);
+
+    opacity: 0.01;
+  }
+}

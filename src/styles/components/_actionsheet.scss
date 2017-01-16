@@ -1,0 +1,74 @@
+.action-sheet {
+  .action-sheet-wrap,.action-sheet-mask {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .action-sheet-mask {
+      height: 100%;
+
+      background-color: $mask-bg;
+  }
+}
+
+.action-sheet {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+
+      width: 100%;
+      .action-sheet-content {
+        margin: .625rem;
+        .action-sheet-list {
+          margin-top: .625rem;
+
+          text-align: center;
+
+          color: map-get($colorful, primary);
+
+          font-size: $btn-font-size;
+          .action-sheet-item {
+            position: relative;
+
+            padding: .5rem 0;
+
+            background-color: #fff;
+            &:first-child {
+              border-top-left-radius: .625rem;
+              border-top-right-radius: .625rem;
+            }
+            &:last-child {
+              border-bottom-right-radius: .625rem;
+              border-bottom-left-radius: .625rem;
+              &:before {
+                height: 0;
+
+                border-bottom: 0;
+              }
+            }
+            &:before {
+              position: absolute;
+              right: 0;
+              bottom: 0;
+              left: 0;
+
+              height: 1px;
+
+              content: " ";
+              -webkit-transform: scaleY(0.5);
+              transform: scaleY(0.5);
+              -webkit-transform-origin: 0 100%;
+              transform-origin: 0 100%;
+
+              border-bottom: 1px solid #d9d9d9;
+            }
+          }
+          .action-sheet-destructive-button {
+            color: map-get($colorful, red);
+          }
+        }
+      }
+  }

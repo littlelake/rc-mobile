@@ -1,0 +1,81 @@
+
+.btn {
+  position: relative;
+
+  display: block;
+  overflow: hidden;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: $btn-height;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  text-align: center;
+  text-decoration: none;
+
+  color: $btn-default-color;
+  border: 0;
+  border-radius: $btn-radius;
+  background-color: $btn-default-bg;
+
+  font-size: $btn-font-size;
+  line-height: $btn-height;
+
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: $color-tap;
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    box-sizing: border-box;
+    width: 200%;
+    height: 200%;
+
+    content: " ";
+    transform: scale(.5);
+    transform-origin: 0 0;
+
+    // border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: $btn-radius*2;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:not([disabled]):active {
+    color: $btn-active-color;
+    background-color: $btn-active-bg;
+  }
+
+  &[disabled] {
+    color: #fff;
+    background-color: $btn-disabled-bg;
+  }
+}
+
+@each $color-name in map-keys($colorful) {
+  .btn-#{$color-name} {
+    color: #fff;
+    background-color: map-get($colorful, $color-name);
+
+    &:not([disabled]):active {
+      color: #fff;
+      background-color: darken(map-get($colorful, $color-name), 5%);
+    }
+  }
+
+  .btn-#{$color-name}-border {
+    color: map-get($colorful, $color-name);
+    &:after {
+      border: 1px solid map-get($colorful, $color-name);
+    }
+    &:not([disabled]):active {
+      color: #fff;
+      background-color: darken(map-get($colorful, $color-name), 5%);
+    }
+  }
+}

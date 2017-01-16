@@ -1,0 +1,45 @@
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-gray {
+  color: $color-text-gray;
+}
+
+.text-red {
+  color: map-get($colorful, red);
+}
+
+.text-primary {
+  color: map-get($colorful, primary);
+}
+
+.text-gray {
+  color: $color-text-gray;
+}
+
+.font-sm {
+  font-size: $font-size-sm;
+}
+
+.font-icon {
+  font-size: $font-icon-size !important;
+  // padding-right: 10px;
+}
+
+.clearfix {
+  @include clearfix();
+}
+
+.no-padding-top {
+  padding-top: 0 !important;
+}

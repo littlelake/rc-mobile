@@ -1,0 +1,36 @@
+
+.cards {
+  position: relative;
+
+  overflow: hidden;
+
+  background-color: #fff;
+
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.card-header {
+  position: relative;
+  padding: .5rem 1rem;
+  font-size: 1.1rem;
+  &:after {
+    @include border-bottom($cells-border-color);
+  }
+}
+
+.card-body {
+  padding: .625rem 1rem;
+  display: flex;
+  .flex-left {
+    flex: 2;
+  }
+  .flex-right {
+    flex: 1;
+  }
+}
+
+.card-footer {
+  padding: .5rem 1rem;
+  background-color: #fafafa;
+}

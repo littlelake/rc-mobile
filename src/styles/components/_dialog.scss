@@ -1,0 +1,120 @@
+
+.dialog {
+  position: fixed;
+  z-index: $zindex-dialog;
+  top: 50%;
+  left: 50%;
+
+  overflow: hidden;
+
+  width: $dialog-width;
+  max-width: $dialog-max-width;
+
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  border-radius: $dialog-radius;
+  background-color: $dialog-bg;
+
+  .dialog-hd {
+    padding: $dialog-header-padding;
+    
+    .dialog-title {
+      font-size: $font-size-md;
+      font-weight: 400;
+    }
+  }
+
+  .dialog-bd {
+    padding: $dialog-body-padding;
+
+    color: $dialog-body-color;
+
+    font-size: $font-size-base;
+    line-height: $line-height-sm;
+
+    @include text-wrap;
+  }
+
+  .dialog-ft {
+    position: relative;
+
+    display: flex;
+
+    height: $dialog-footer-height;
+
+    font-size: $font-size-md;
+    &:after {
+      content: " ";
+
+      @include border-top($dialog-border-color);
+    }
+
+    .dialog-btn {
+      position: relative;
+
+      display: block;
+
+      color: $dialog-btn-color;
+      border: none;
+      background-color: transparent;
+
+      flex: 1;
+      -webkit-tap-highlight-color: $color-tap;
+      -webkit-appearance: none;
+
+      &:focus {
+        outline: 0;
+      }
+
+      &:active {
+        background-color: $btn-active-bg;
+      }
+
+      &:after {
+        content: " ";
+
+        @include border-left($dialog-border-color);
+      }
+
+      &:first-child:after {
+        display: none;
+      }
+
+      &.btn-primary {color: $color-primary};
+    }
+  }
+}
+
+.loading {
+  position: fixed;
+  z-index: $zindex-toasts;
+  top: 0;
+  left: 0;
+
+  display: flex;
+
+  width: 100%;
+  height: 100%;
+
+  text-align: center;
+
+  color: $toasts-color;
+
+  align-items: center;
+  justify-content: center;
+  .loading-wrap {
+    padding: 1rem 0;
+    width: 75%;
+
+    border-radius: $toasts-radius;
+
+    background: $loading-bg;
+
+    .loading-img {
+      img {
+        width: 50px;
+      }
+    }
+  }
+}

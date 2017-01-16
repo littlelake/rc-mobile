@@ -1,0 +1,142 @@
+
+// colors 颜色
+$color-link: #586c94 !default;
+
+$color-bg-default: #efeff4 !default;
+$color-bg-active: #ececec !default;
+
+$color-brand: #32c1d4 !default;
+$color-primary: $color-brand !default;
+
+$color-line-light: #e5e5e5 !default;
+$color-line-dark: #bcbab6 !default;
+
+$color-text-tips: #b2b2b2 !default;
+$color-text-warn: #e64340 !default;
+$color-text-gray: #999 !default;
+$color-text-input: #333 !default;
+$color-text-lighter: #d9d9d9 !default;
+$gray-light: rgba(0, 0, 0, 0.38) !default;
+
+$color-tap: rgba(0, 0, 0, 0) !default;
+
+$colorful: (
+  primary: $color-brand,
+  green: #accd3f,
+  red: #ff5046,
+  blue: #8790f4,
+  orange: #ffbe23,
+  pink: #fa72cf,
+  gray: $color-text-gray
+) !default;
+
+
+// font 字体
+$font-en: -apple-system-font, "Helvetica Neue", Helvetica !default;
+$font-cn: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "STHeiTi" !default;
+$font-sans: sans-serif !default;
+$font-base: $font-en, $font-sans !default;
+
+$font-size-root: 16px !default;
+$font-size-xs: .75rem !default; // (12px)
+$font-size-sm: .875rem !default; // (14px)
+$font-size-base: 1rem !default; // (16px)
+$font-size-md: 1.125rem !default; // (18px)
+$font-size-lg: 1.5rem !default;
+$font-icon-size: 1.4rem !default;
+
+// line-height 行高
+$line-height-base: 1 !default;
+$line-height-sm: 1.4 !default;
+$line-height-md: 1.6 !default;
+
+
+// cells 列表
+$cells-bg: #fff !default;
+$cells-border-color: #d9d9d9 !default;
+$cell-height: 2.75rem !default;
+$cell-label-width: 4.25rem !default;
+$cell-padding-x: 1rem !default;
+$cell-padding-y: 0.625rem !default;
+
+$cells-tips-font-size: 0.875rem !default;
+$cell-icon-size: 1.8rem !default;
+$cell-icon-md-size: 1.5rem !default;
+$cell-icon-xs-size: 1.2rem !default;
+
+
+// buttons 按钮
+$btn-default-bg: transparent !default;
+$btn-default-color: #000 !default;
+$btn-height: 2.875rem !default; //(46px)
+$btn-font-size: 1.125rem !default; //(18px)
+$btn-radius: 5px !default;
+
+$btn-active-bg: #dedede !default;
+$btn-active-color: rgba(0,0,0,.6) !default;
+
+$btn-disabled-bg: #d9d9d9 !default;
+$btn-disabled-color: rgba(0,0,0,.3) !default;
+
+// mask 遮罩
+$mask-bg: rgba(0, 0, 0, .6) !default;
+
+// dialog 弹出框
+$dialog-bg: #fff !default;
+$dialog-width: 90% !default;
+$dialog-max-width: 18.75rem !default; //(300px)
+$dialog-radius: 12px !default;
+
+$dialog-header-padding: 1rem 1.5rem 0.5rem !default;
+$dialog-body-padding: 0 1.5rem 0.75rem !default;
+$dialog-body-color: #333 !default;
+$dialog-footer-height: 3rem !default;
+
+$dialog-border-color: #d5d5d6 !default;
+$dialog-btn-color: #353535;
+
+// z-index 层级
+$zindex-mask: 1000 !default;
+$zindex-toasts: 1080 !default;
+$zindex-dialog: 1090 !default;
+
+// uploader 图片上传
+$uploader-border-color: #d9d9d9 !default;
+$uploader-border-width: 1px !default;
+$uploader-size: 79px !default;
+$uploader-gutter: 0.625rem !default;
+
+// toasts 轻提示
+$toasts-bg: rgba(40, 40, 40, 0.75);
+$toasts-color: #fff;
+$toasts-radius: 5px;
+
+// loading 加载
+$loading-bg: rgba(40, 40, 40, 0.55);
+
+// space 间距
+$space-y: (
+  xs: .5rem,
+  sm: .75rem,
+  md: 1.25rem,
+  lg: 1.875rem,
+  xl: 2.625rem
+) !default;
+
+$space-x: (
+  sm: .75rem,
+  md: 1.25rem,
+  lg: 1.875rem
+) !default;
+
+
+// tabs 标签页
+$tabs-line-bg: $color-primary !default;
+$tabs-line-height: 2px !default;
+
+$tabs-header-bg: #fff !default;
+$tabs-header-color: inherit !default;
+$tabs-header-height: 2.75rem !default;
+
+$tabs-border-color: #dbdbdb !default;
+$tabs-border-height: .75rem !default;

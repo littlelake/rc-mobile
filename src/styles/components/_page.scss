@@ -1,0 +1,49 @@
+.page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  padding-bottom: 3.4rem;
+}
+
+.wrapper {
+  overflow: hidden;
+
+  padding: 0.625rem 1rem;
+}
+
+.page-tips {
+  display: block;
+
+  padding: 0.625rem;
+
+  text-align: center;
+
+  color: #666;
+
+  font-size: 0.875rem;
+}
+
+.mask-transparent {
+  position: fixed;
+
+  z-index: $zindex-mask;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.mask {
+  background: rgba(0, 0, 0, .6);
+
+  @extend .mask-transparent;
+}
+
+.page-cells {
+  .cells {
+    margin-bottom: 1rem;
+  }
+}
+

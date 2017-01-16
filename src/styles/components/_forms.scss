@@ -1,0 +1,298 @@
+
+.form-input {
+  width: 100%;
+  height: $cell-height - $cell-padding-y *2;
+
+  border: 0;
+  outline: 0;
+  color: $color-text-input;
+  background-color: transparent;
+
+  font-size: inherit;
+  line-height: $cell-height - $cell-padding-y *2;
+
+  -webkit-appearance: none;
+
+  &::-webkit-outer-spin-button, &::-webkit-inner-spin-button{
+    margin: 0;
+
+    -webkit-appearance: none;
+  }
+  &::-webkit-input-placeholder {
+    color: $color-text-lighter;
+  }
+}
+
+.form-select {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  height: $cell-height;
+
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+
+  font-size: inherit;
+  line-height: $cell-height;
+
+  -webkit-appearance: none;
+}
+
+.file-input {
+  opacity: 0;
+}
+
+.input-container {
+  position: relative;
+
+  display: inline-block;
+
+  width: 100%;
+  margin-top: .5rem;
+
+  .input-line {
+    position: absolute;
+    bottom: -.1rem;
+
+    width: 100%;
+    height: 2px;
+
+    transition: transform .45s cubic-bezier(0.23, 1, 0.32, 1);
+    transform: scaleX(0);
+
+    border-bottom: 2px solid $color-brand;
+
+    will-change: transform;
+  }
+
+  // 分隔线
+  .input-border {
+    @include border-top($cells-border-color);
+
+    top: inherit;
+    bottom: -.1rem;
+
+    &.disabled {
+      border-bottom-color: transparent; 
+      background-image: linear-gradient(to right, $gray-light 0%, $gray-light 33%, transparent 0%);
+      background-repeat: repeat-x;
+      background-position: bottom -1px left 0;
+      background-size: 4px 1px;
+    }
+  }
+
+  .input-required {
+    &:after {
+      content: ' *';
+      vertical-align: top;
+
+      color: map-get($colorful, red);
+
+      font-size: .6rem;
+    }
+  }
+
+  // placeholder 反显
+  .input-placeholder {
+    position: absolute;
+    bottom: .3rem;
+
+    padding: 2px;
+
+    transition: opacity .45s cubic-bezier(0.23, 1, 0.32, 1);
+    pointer-events: none;
+
+    color: $gray-light;
+
+    will-change: opacity;
+
+    // 设置隐藏
+    &.active {
+      opacity: 0;
+    }
+  }
+
+  input, textarea {
+    width: 100%;
+    padding-top: .5rem;
+    padding-bottom: .1rem;
+
+    color: #333;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    background-color: transparent;
+    box-shadow: none;
+
+    font-family: inherit;
+    font-size: $font-size-base;
+    
+    // 禁用
+    &[disabled],
+    &[readonly] {
+      cursor: not-allowed;
+
+      color: $gray-light;
+      -webkit-text-fill-color: $gray-light;
+      opacity: 1;
+    }
+    
+    // 激活横线
+    &:focus:not([readonly]) + label + .input-line, &:focus:not([readonly]) + .input-line{
+      transform: scaleX(1);
+    }
+
+    // 激活label
+    &:focus:not([readonly]) ~ label {
+      color: $color-brand;
+    }
+  }
+
+  input {
+    height: 2.25rem;
+  }
+
+  textarea {
+    overflow: hidden;
+
+    resize: none;
+  }
+
+  // 标签文字
+  label {
+    position: absolute;
+    top: .5rem;
+    left: 0;
+
+    margin: 0;
+
+    cursor: text;
+    transition: transform .45s cubic-bezier(.25,.8,.25,1);
+    transform: scale(1);
+    transform-origin: left top 0;
+    pointer-events: none;
+
+    color: $gray-light;
+
+    font-size: $font-size-base;
+    font-weight: normal;
+
+    &.active {
+      transform: translateY(-55%) scale(.75);
+    }
+    &.label-disable {
+      color: rgba(0,0,0,.18);
+    }
+  }
+
+  // 底部提示文字
+  .input-hint {
+    position: absolute;
+
+    margin-top: 8px;
+
+    color: $color-text-gray;
+
+    font-size: $font-size-sm;
+    line-height: 1;
+  }
+
+  &.invalid {
+    .input-border {
+      border-bottom: 2px solid map-get($colorful, red);
+    }
+    .input-hint, label, input:focus:not([readonly]) ~ label {
+      color: map-get($colorful, red);
+    }
+    .input-line {
+      border-bottom-color: map-get($colorful, red);
+    }
+  }
+  .handle-icon {
+    position: absolute;
+    z-index: 2;
+    top: .4rem;
+    right: 1rem;
+
+    font-size: 1.3rem;
+  }
+
+  .form-select {
+    padding-top: .3rem;
+  }
+}
+
+.popup {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 2rem;
+  width: 100%;
+  background: #fff;
+  z-index: 1001;
+  .popup-header {
+    position: relative;
+    text-align: center;
+    p {
+      font-size: rem(15px);
+      font-weight: 700;
+      height: rem(44px);
+      line-height: rem(44px);
+      &:after {
+        @include border-bottom($cells-border-color);
+      }
+    }
+    .iconfont {
+      position: absolute;
+      top: .25rem;
+      right: 1rem;
+      font-size: 1.4rem;
+      color: map-get($colorful , gray );
+    }
+  }
+  .popup-body {
+    padding: 0 1rem;
+    .des {
+      display: block;
+      text-align: center;
+      line-height: rem(40px);
+    }
+    &.popup-body-top {
+      margin-top: .5rem;
+    }
+    &.popup-body-btm {
+      margin-bottom: .5rem;
+    }
+    &.popup-body-none {
+      margin-top: .5rem;
+      margin-bottom: .5rem;
+    }
+    .flex {
+      line-height: 2rem;
+    }
+  }
+  .cells {
+    &:before {
+      border-top: 0;
+    }
+    &:after {
+      border-bottom: 0;
+    }
+    .cells-cell {
+      border: 1px solid #d9d9d9;
+      border-radius: 6px;
+      .cell-ft {
+        color: map-get($colorful, primary);
+      }
+      .vcode-ft {
+        &:before {
+          content: "";
+          border-left: 1px solid #d9d9d9;
+          padding-left: 1rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+
+.toast {
+  position: fixed;
+  z-index: $zindex-toasts;
+  top: 0;
+  left: 0;
+
+  display: flex;
+
+  width: 100%;
+  height: 100%;
+
+  text-align: center;
+
+  color: $toasts-color;
+
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+
+  .toast-content {
+    display: inline-block;
+
+    padding: 0.5rem 1rem;
+
+    border-radius: $toasts-radius;
+    background-color: $toasts-bg;
+  }
+
+}

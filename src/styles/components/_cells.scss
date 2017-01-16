@@ -1,0 +1,208 @@
+
+.cells-title {
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  padding: 0 $cell-padding-x;
+
+  color: $color-text-gray;
+
+  font-size: $cells-tips-font-size;
+  .iconfont {
+    vertical-align: middle;
+    &.icon-xs {
+      font-size: $cell-icon-xs-size;
+    }
+    &.icon-md {
+      font-size: $cell-icon-md-size;
+    }
+  }
+}
+
+.cells {
+  position: relative;
+
+  width: 100%;
+
+  background-color: $cells-bg;
+
+  &:before {
+    @include border-top($cells-border-color);
+  }
+
+  &:after {
+    @include border-bottom($cells-border-color);
+  }
+
+  &.cells-thumb .cells-cell:before {
+    left: $cell-padding-x*2 + $cell-icon-size;
+  }
+
+  &.cells-thumb .cells-cell-xs:before {
+    left: $cell-padding-x*2 + $cell-icon-xs-size;
+  }
+
+  &.cells-thumb .no-cell-deviation:before {
+    left: $cell-padding-x;
+  }
+
+  a {color: inherit;}
+  
+}
+
+.cells-cell {
+  position: relative;
+
+  display: flex;
+
+  min-height: $cell-height;
+  padding: 0 $cell-padding-x;
+
+  align-items: center;
+
+  &.cell-vcode {
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+
+  &.cell-select {
+    padding: 0;
+
+    .cell-hd {padding-left: $cell-padding-x}
+
+    &:after {
+      position: absolute;
+      top: 50%;
+      right: $cell-padding-x;
+
+      margin-top: -3px;
+
+      content: " ";
+
+      @include arrow(right, 6px, 1px, #c8c8cd);
+    }
+
+    &.cell-select-single {
+      padding-left: $cell-padding-x;
+    }
+  }
+  
+  // 箭头
+  &.cell-access .cell-ft:after {
+    position: absolute;
+    top: 50%;
+    right: 2px;
+
+    display: inline-block;
+
+    margin-top: -3px;
+
+    content: " ";
+
+    @include arrow(right, 6px, 1px, #c8c8cd);
+  }
+  
+  &:before {
+    @include border-top($cells-border-color);
+
+    left: $cell-padding-x;
+  }
+
+  &:first-child:before {
+    display: none;
+  }
+
+  .cell-hd {
+    padding-right: .6rem;
+
+    vertical-align: middle;
+    label {
+      width: $cell-label-width;
+      margin-right: $cell-padding-x;
+
+      color: $color-text-gray;
+
+      @include text-wrap();
+    }
+  }
+  
+  .cell-icon {
+    // margin-right: $cell-padding-x;
+
+    i {
+      font-size: $cell-icon-size;
+      &.icon-xs {
+        font-size: $cell-icon-xs-size;
+      }
+      &.icon-md {
+        font-size: $cell-icon-md-size;
+      }
+    }
+  }
+
+  .cell-bd {
+    flex: 1;
+  }
+
+  .cell-ft {
+    text-align: right;
+    pointer-events: none;
+    .cell-right-txt {
+      padding-right: .5rem;
+    }
+    .icon-md {
+      font-size: $cell-icon-md-size;
+    }
+  }
+
+  .btn-vcode {
+    position: position;
+
+    width: inherit;
+    min-width: 100px;
+    height: inherit;
+    padding: 0 0 0 1rem;
+
+    color: map-get($colorful , primary );
+
+    font-size: 1rem;
+    line-height: inherit;
+    pointer-events: auto;
+    &:not([disabled]):active {
+      background-color: transparent;
+    }
+    &[disabled] {
+      color: $btn-disabled-color;
+    }
+    &[disabled],&:hover {
+      background-color: transparent;
+    }
+    &:after {
+      border: 0;
+      border-left: 1px solid rgba(0, 0, 0, .2);
+      border-radius: 0;
+    }
+  }
+}
+
+.cells-tips {
+  padding: 0 $cell-padding-x;
+  padding-top: .5rem;
+
+  color: $color-text-gray;
+  background-color: $color-bg-default;
+
+  font-size: $cells-tips-font-size;
+}
+
+.input-cells {
+  &:before {
+    border-top: 0;
+  }
+  .cells-cell {
+    padding: 0 0 0 1rem;
+    &:before {
+      border-top: 0;
+    }
+  }
+}
