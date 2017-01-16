@@ -22,13 +22,13 @@
 2. clone项目
 
     ```bash
-    git clone http://git.gzkkonline.com/cf-frontend/cf-xianghua-webapp.git
+    git clone https://github.com/littlelake/rc-mobile.git
     ```
 
 3. 进入项目
 
     ```bash
-    cd cf-xianghua-webapp
+    cd rc-mobile
     ```
 
 4. 安装依赖
